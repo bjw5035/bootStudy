@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.example.boardStudy.dao.admin.UserDAO">
+
+
+  <!-- 회원가입 -->
+  <!-- insert : 데이터 입력(insert)을 나타내는 태그.
+       id : 네임스페이스안에서 쿼리를 구분하는 유일한 식별자 역할을 한다.
+       parameterType : 쿼리에 적용할 파라미터 타입. (map타입이 있다.)
+       keyProperty, useGeneratedKeys : 두개는 한쌍이다. useGeneratedKeys가 true로 설정되면 Mybatis는 Insert쿼리 실행 후 생성된 PK를
+                                       파라미터 객체의 keyProperty속성에 넣어준다. 사용법은 DAO에서 확인 가능.
+      <![CDATA[ : 원시(Raw) 문자열을 나타낸다. <![CDATA[안에 있는 문자열은 <등의 태그 문자가 있더라도 인식하지 않는다.
+  -->
+  <insert id="join" parameterType="com.study.boardStudy.vo.JoinVO">
+      <![CDATA[
+        INSERT INTO members
+          (id
+          , pw
+          , name
+          )
+        VALUES
+            (#{userId}
+            , #{userName}
+            , #{userPw}
+            );
+      ]]>
+  </insert>
+<!--  <insert id="join" parameterType="hashmap" keyProperty="id" useGeneratedKeys="true">-->
+
+<!--	</insert>-->
+
+  <!-- 로그인 -->
+  <!-- resultType : select쿼리가 실행 된 후 반환값을 담을 컨테이너 타입-->
+  <!--	<select id="login" parameterType="com.myweb.board.backFile.MemberVO" resultType="hashmap">-->
+  <select id="memberLogin" parameterType="com.study.boardStudy.vo.LoginVO">
+		<![CDATA[
+      select *
+      from members
+      where 1 = 1
+        AND id = #{userId}
+        AND pw = #{userPw};
+    ]]>
+	</select>
+
+  <!-- 마이페이지 수정 -->
+  <!--<update id="update_myModify">
+    <![CDATA[
+      UPDATE joinmember
+      set pw=#{userPw}
+        ,name=#{userName}
+      where id=#{userId}
+    ]]>
+  </update>-->
+
+  <!-- <delete id="delete_account"> <![CDATA[ delete from userinfo where id
+    = #{id} ]]> </delete> -->
+</mapper>
