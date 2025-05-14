@@ -1,0 +1,43 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# OS 관련
+.DS_Store
+Thumbs.db
+
+# 빌드 결과물
+/out/
+/target/
+build/
+
+# 로그 파일
+*.log
+
+# 환경 설정 (보안정보)
+.env
+*.properties
+*.yml
+application-*.yml
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# JAR, WAR, etc.
+*.jar
+*.war
+*.ear
+
+# 기타
+*.class
+*.swp
+*.swo
