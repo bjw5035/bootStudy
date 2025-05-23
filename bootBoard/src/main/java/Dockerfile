@@ -4,7 +4,6 @@ FROM openjdk:17
 # 2. JAR 파일을 컨테이너 내부로 복사
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
-COPY ${JAR_FILE} app.jar
 
 # 3. 포트 오픈
 EXPOSE 8080
