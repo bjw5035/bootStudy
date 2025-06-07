@@ -1,8 +1,12 @@
 HELP.md
-target/
+/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+# 빌드 결과물
+/out/
+build/
 
 ### STS ###
 .apt_generated
@@ -31,3 +35,30 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# 로그 파일
+*.log
+
+# 환경 설정 (보안정보)
+.env
+*.properties
+*.yml
+application-*.yml
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# JAR, WAR, etc.
+*.jar
+*.war
+*.ear
+
+# 기타
+*.class
+*.swp
+*.swo
