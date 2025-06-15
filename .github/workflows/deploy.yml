@@ -18,8 +18,8 @@ jobs:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: '22'
+          port: ${{ secrets.DEPLOY_PORT }}
           script: |
-            cd /home/cook/bootBoard &&
+            cd /home/ ${{ secrets.DEPLOY_USER }} /bootBoard &&
             git pull &&
             ./deploy.sh
