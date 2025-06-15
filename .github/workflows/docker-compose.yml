@@ -49,6 +49,3 @@ volumes:
 
 networks:
   backend:
-
-on:
-jobs:
