@@ -20,6 +20,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.DEPLOY_PORT }}
           script: |
-            cd /home/ ${{ secrets.DEPLOY_USER }} /bootBoard &&
+            cd /home/cook/bootStudy &&
             git pull &&
+            cd /bootBoard &&
             ./deploy.sh
