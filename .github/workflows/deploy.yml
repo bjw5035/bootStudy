@@ -22,5 +22,5 @@ jobs:
           script: |
             cd /home/cook/bootStudy &&
             git pull &&
-            cd /bootBoard &&
+            cd bootBoard &&
             ./deploy.sh
